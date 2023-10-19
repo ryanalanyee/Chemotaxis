@@ -50,7 +50,5 @@ class Walker
      ellipse(myX,myY,35,20);
      fill(flycolorR,flycolorG,flycolorB);
      ellipse(myX,myY,15,25);
-     fill(180,100,0);
-     ellipse(myX,myY-5,15,17);
   }
 }
