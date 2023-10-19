@@ -1,26 +1,26 @@
-Walker [] fly;
+Walker [] ufo;
 void setup()
 {
   size(550,550);
-   fly = new Walker[30];   
-   for(int i=0; i < fly.length; i++)
-   fly[i] = new Walker();
+   ufo = new Walker[30];   
+   for(int i=0; i < ufo.length; i++)
+   ufo[i] = new Walker();
 }
 void draw()
 {
   background(0);
 
   
-  for(int i=0; i < fly.length; i++){
-    fly[i].walk();
-    fly[i].show();
+  for(int i=0; i < ufo.length; i++){
+    ufo[i].walk();
+    ufo[i].show();
 
    }
 }
 
 class Walker
 {
-  int myX,myY, flycolorR, flycolorG, flycolorB;
+  int myX,myY, ufocolorR, ufocolorG, ufocolorB;
   Walker()
   
   {
@@ -43,12 +43,14 @@ class Walker
   }
   void show()
   {
-    flycolorR = (int)(Math.random()*120)+125;
-    flycolorG = (int)(Math.random()*120)+500;
-    flycolorB = (int)(Math.random()*120)+1;
+    ufocolorR = (int)(Math.random()*120)+125;
+    ufocolorG = (int)(Math.random()*120)+255;
+    ufocolorB = (int)(Math.random()*120)+50;
+     fill(ufocolorR,ufocolorG,ufocolorB);
+     ellipse(myX,myY-10,25,15);
      fill(255,255,255);
-     ellipse(myX,myY,35,20);
-     fill(flycolorR,flycolorG,flycolorB);
-     ellipse(myX,myY,15,25);
+     ellipse(myX,myY,35,15);
+    
+     
   }
 }
