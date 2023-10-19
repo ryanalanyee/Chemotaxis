@@ -1,26 +1,26 @@
-Walker [] butt;
+Walker [] fly;
 void setup()
 {
-  size(500,500);
-   butt = new Walker[30];   
-   for(int i=0; i < butt.length; i++)
-   butt[i] = new Walker();
+  size(550,550);
+   fly = new Walker[30];   
+   for(int i=0; i < fly.length; i++)
+   fly[i] = new Walker();
 }
 void draw()
 {
   background(0);
 
   
-  for(int i=0; i < butt.length; i++){
-    butt[i].walk();
-    butt[i].show();
+  for(int i=0; i < fly.length; i++){
+    fly[i].walk();
+    fly[i].show();
 
    }
 }
 
 class Walker
 {
-  int myX,myY, buttcolorR, buttcolorG, buttcolorB;
+  int myX,myY, flycolorR, flycolorG, flycolorB;
   Walker()
   
   {
@@ -43,10 +43,14 @@ class Walker
   }
   void show()
   {
-    buttcolorR = (int)(Math.random()*120)+500;
-    buttcolorG = (int)(Math.random()*120)+237;
-    buttcolorB = (int)(Math.random()*120)+120;
-    fill(buttcolorR,buttcolorG,buttcolorB);
-    ellipse(myX,myY,30,30);
+    flycolorR = (int)(Math.random()*120)+125;
+    flycolorG = (int)(Math.random()*120)+500;
+    flycolorB = (int)(Math.random()*120)+1;
+     fill(255,255,255);
+     ellipse(myX,myY,35,20);
+     fill(flycolorR,flycolorG,flycolorB);
+     ellipse(myX,myY,15,25);
+     fill(180,100,0);
+     ellipse(myX,myY-5,15,17);
   }
 }
