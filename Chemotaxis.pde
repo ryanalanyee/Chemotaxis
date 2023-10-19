@@ -1,35 +1,52 @@
-import java.awt.*;
-import java.util.Random;
+Walker [] butt;
+void setup()
+{
+  size(500,500);
+   butt = new Walker[30];   
+   for(int i=0; i < butt.length; i++)
+   butt[i] = new Walker();
+}
+void draw()
+{
+  background(0);
 
-public class Bacteria {
-    private int x;
-    private int y;
-    private int color; // You can store color as an integer
+  
+  for(int i=0; i < butt.length; i++){
+    butt[i].walk();
+    butt[i].show();
 
-    public Bacteria(int x, int y) {
-        this.x = x;
-        this.y = y;
-        this.color = generateRandomColor();
-    }
+   }
+}
 
-    public void move() {
-        Random rand = new Random();
-        int dx = rand.nextInt(3) - 1; // Random movement in x direction (-1, 0, 1)
-        int dy = rand.nextInt(3) - 1; // Random movement in y direction (-1, 0, 1)
-        x += dx;
-        y += dy;
-    }
-
-    public void show(Graphics g) {
-        g.setColor(new Color(color));
-        g.fillOval(x, y, 10, 10); // Assuming a circular organism
-    }
-
-    private int generateRandomColor() {
-        Random rand = new Random();
-        int r = rand.nextInt(256);
-        int g = rand.nextInt(256);
-        int b = rand.nextInt(256);
-        return new Color(r, g, b).getRGB();
-    }
+class Walker
+{
+  int myX,myY, buttcolorR, buttcolorG, buttcolorB;
+  Walker()
+  
+  {
+    myX = myY = 250 ;
+  }
+  void walk()
+  {
+  
+   if(mouseX > myX)
+   myX = myX + (int)(Math.random()*10)-3;
+   else
+     myX = myX + (int)(Math.random()*10)-5;
+  
+  if(mouseY > myY)
+   myY = myY + (int)(Math.random()*10)-3;
+   else
+     myY = myY + (int)(Math.random()*10)-5;  
+  
+     
+  }
+  void show()
+  {
+    buttcolorR = (int)(Math.random()*120)+100;
+    buttcolorG = (int)(Math.random()*120)+100;
+    buttcolorB = (int)(Math.random()*120)+100;
+    fill(buttcolorR,buttcolorG,buttcolorB);
+    ellipse(myX,myY,30,30);
+  }
 }
