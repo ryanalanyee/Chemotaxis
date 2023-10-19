@@ -43,9 +43,9 @@ class Walker
   }
   void show()
   {
-    buttcolorR = (int)(Math.random()*120)+100;
-    buttcolorG = (int)(Math.random()*120)+100;
-    buttcolorB = (int)(Math.random()*120)+100;
+    buttcolorR = (int)(Math.random()*120)+500;
+    buttcolorG = (int)(Math.random()*120)+237;
+    buttcolorB = (int)(Math.random()*120)+120;
     fill(buttcolorR,buttcolorG,buttcolorB);
     ellipse(myX,myY,30,30);
   }
